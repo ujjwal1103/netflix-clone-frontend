@@ -11,6 +11,7 @@ const Home = () => {
     movies = [],
     loadFavoriteMovies,
     loadingMovies,
+    errorMovies,
   } = useMovies() as MovieContextType;
 
   useEffect(() => {
@@ -21,11 +22,21 @@ const Home = () => {
   const filterMoviesByGenre = (genre: string) =>
     movies?.filter((movie) => movie.genre.includes(genre));
 
-  if (loadingMovies) {
+  if (loadingMovies && !errorMovies) {
     return (
       <>
         <LoadingSkeleton />
         <LoadingSkeleton />
+      </>
+    );
+  }
+
+  if (errorMovies) {
+    return (
+      <>
+        <div className="h-dvh w-screen flex items-center justify-center">
+          <div className="p-3 border border-red-600 rounded-sm text-red-600"> {errorMovies}</div>
+        </div>
       </>
     );
   }

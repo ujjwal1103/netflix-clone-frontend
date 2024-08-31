@@ -22,8 +22,8 @@ const Header = () => {
 
         <nav className="flex gap-2 md:gap-3 text-sm items-center">
           <SearchMovie />
-          {isAuthenticated && (
-            <Link to="/favorites" className="hidden sm:block text-sm w-32">
+          {!isAuthenticated && (
+            <Link to="/favorites" className="hidden sm:block text-sm w-32 font-semibold hover:text-zinc-200">
               My Favorites
             </Link>
           )}
@@ -53,7 +53,7 @@ const Header = () => {
             <div className="hidden group-hover:flex mt-3 absolute right-0 bg-zinc-950 p-2 flex-col gap-2">
               <p className="block">{user?.email}</p>
               {isAuthenticated && (
-                <Link to="/favorites" className="block  w-32">
+                <Link to="/favorites" className="block w-32">
                   My Favorites
                 </Link>
               )}

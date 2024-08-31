@@ -1,6 +1,6 @@
 import image1 from "../assets/avenger.jpg";
 import image2 from "../assets/batman.jpg";
-import image3 from "../assets/spider_man_into_the_spider_verse.jpg";
+import image3 from "../assets/spider.jpg";
 import image4 from "../assets/joker.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
