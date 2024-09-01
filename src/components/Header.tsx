@@ -22,7 +22,7 @@ const Header = () => {
 
         <nav className="flex gap-2 md:gap-3 text-sm items-center">
           <SearchMovie />
-          {!isAuthenticated && (
+          {isAuthenticated && (
             <Link to="/favorites" className="hidden sm:block text-sm w-32 font-semibold hover:text-zinc-200">
               My Favorites
             </Link>
@@ -30,7 +30,7 @@ const Header = () => {
         </nav>
       </div>
 
-      {!isAuthenticated ? (
+      {isAuthenticated ? (
         <div className="flex items-center space-x-4">
           <Link to={"/login"} className="bg-red-600 px-3 py-1 rounded">
             Sign In
