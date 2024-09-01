@@ -30,7 +30,7 @@ const Header = () => {
         </nav>
       </div>
 
-      {isAuthenticated ? (
+      {!isAuthenticated ? (
         <div className="flex items-center space-x-4">
           <Link to={"/login"} className="bg-red-600 px-3 py-1 rounded">
             Sign In
